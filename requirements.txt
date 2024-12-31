@@ -5,3 +5,4 @@ idna==3.6
 requests
 six
 urllib3
+flask
