@@ -23,6 +23,7 @@ class WebPage:
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Skillsets Demo</title>
     <style>
         body {{
             background-color: {self.bg_color};
