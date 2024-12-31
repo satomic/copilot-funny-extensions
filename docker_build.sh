@@ -1,0 +1,1 @@
+docker build -t satomic/skillset:`date +'%Y%m%d'` .
