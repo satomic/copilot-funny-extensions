@@ -50,11 +50,8 @@ def color():
         hex_color = post_data.get('hex_color', '#FFFFFF')
         logger.info(f'Trigger from GitHub Extension, Color: {hex_color}')
         webapp.color(hex_color)
-        return jsonify({
-            "notice": f'Color updated to {hex_color}, you must visit {github_handler.request_url} to see it!'
-        })
-    
-    
+        return f'Color updated to {hex_color}, you must visit {github_handler.request_url} to see it!'
+        
     return jsonify({"status": "ok"})
 
 
@@ -74,9 +71,7 @@ def text():
         size = post_data.get('size', 48)
         logger.info(f'Trigger from GitHub Extension, User: {user_login}, Content: {content}, Size: {size}')
         webapp.text(f"{user_login}: {content}", size)
-        return jsonify({
-            "notice":  f'Text updated to {content}, Size: {size}, you must visit {github_handler.request_url} to see it!'
-        })
+        return f'Text updated to {content}, Size: {size}, you must visit {github_handler.request_url} to see it!'
     
     return jsonify({"status": "ok"})
 
