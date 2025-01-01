@@ -23,7 +23,7 @@ class GitHubHandler:
         X-Real-Ip: 10.240.3.64
         X-Forwarded-Port: 443
         X-Forwarded-Scheme: https
-        X-Original-Uri: /language
+        X-Original-Uri: /color
         X-Scheme: https
         Github-Public-Key-Identifier: 4fe6b016179b74078ade7581abf4e84fb398c6fae4fb973972235b84fcd70ca3
         Github-Public-Key-Signature: MEYCIQDxT7J8PrXZfA1p2jXVMLBmzG39pQugJ51QK/fxmv/QAAIhAORAu8grmgNfLuKFCKIdORRP/2ULtuFdtpQiGUgd3luD

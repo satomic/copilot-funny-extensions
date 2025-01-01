@@ -122,14 +122,14 @@ Repo link: [Copilot Skillset Demo](https://github.com/satomic/copilot-skillset-d
    ```bash
    bash docker_build.sh
    ```
-3. Run docker (I published my docker image `satomic/skillset:20241231` already, you can just use it directly).
+3. Run docker (I published my docker image `satomic/skillset` already, you can just use it directly).
    ```bash
    docker run -itd \
    --net=host \
    --restart=always \
    --name skillset \
    -v /srv/skillset-logs:/app/logs \
-   satomic/skillset:20241231 # change this to your own image
+   satomic/skillset # change this to your own image
    ```
 4. You need to fix the HTTPS problem by yourself 🙂. Because backend service should be [publicly accessible via HTTPS](https://docs.github.com/en/copilot/building-copilot-extensions/building-a-copilot-skillset-for-your-copilot-extension/building-copilot-skillsets#prerequisites).
 
