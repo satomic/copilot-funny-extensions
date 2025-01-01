@@ -14,7 +14,7 @@ webapp = WebPage()
 
 @app.route('/', methods=['GET'])
 def default():
-    logger.info(f"Real IP: {request.headers.get('X-Real-Ip')}, Forwarded For: {request.headers.get('X-Forwarded-For')}, Route: /")
+    logger.info(f"route: /")
     github_handler = github_utils.GitHubHandler(request)
     return f"""
     <html>
@@ -34,7 +34,8 @@ def default():
 
 @app.route('/skillset', methods=['GET'])
 def skillset():
-    logger.info(f"Real IP: {request.headers.get('X-Real-Ip')}, Forwarded For: {request.headers.get('X-Forwarded-For')}, Route: /skillset")
+    logger.info(request.headers)
+    logger.info(f"route: /skillset")
     return webapp.generate_html()
 
 @app.route('/color', methods=['GET', 'POST'])
@@ -49,7 +50,7 @@ def color():
         post_data = json.loads(request.data)
         hex_color = post_data.get('hex_color', '#FFFFFF')
         webapp.color(hex_color)
-        logger.info(f"Real IP: {request.headers.get('X-Real-Ip')}, Forwarded For: {request.headers.get('X-Forwarded-For')}, Route: /color, User: {user_login} set Color: {hex_color}")
+        logger.info(f"route: /color, User: {user_login} set Color: {hex_color}")
         return f'Color updated to {hex_color}, you must visit {github_handler.request_url} to see it!'
         
     return jsonify({"status": "ok"})
@@ -60,7 +61,6 @@ def color():
 def text():
 
     if request.method == 'POST':
-        logger.info('Text route')
         github_handler = github_utils.GitHubHandler(request)
         if not github_handler.verify_github_signature():
             return jsonify({"error": "Request must be from GitHub"}), 403
@@ -70,7 +70,7 @@ def text():
         content= post_data.get('content', 'Hello, World!')
         size = post_data.get('size', 48)
         webapp.text(f"{user_login}: {content}", size)
-        logger.info(f"Real IP: {request.headers.get('X-Real-Ip')}, Forwarded For: {request.headers.get('X-Forwarded-For')}, Route: /text, User: {user_login} set Text: {content}, Size: {size}")
+        logger.info(f"route: /text, User: {user_login} set Text: {content}, Size: {size}")
         return f'Text updated to {content}, Size: {size}, you must visit {github_handler.request_url} to see it!'
     
     return jsonify({"status": "ok"})
