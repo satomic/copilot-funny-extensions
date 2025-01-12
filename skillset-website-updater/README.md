@@ -32,7 +32,7 @@
 
 > While Agents-type Extensions offer full control over the user interaction, Skillset make it easy to integrate external tools and services into Copilot Chat by defining simple API endpoints – no AI expertise needed!
 
-Very cool, but also quite confusing. Therefore, I created the project [**Copilot Skillset Demo**](https://github.com/satomic/copilot-skillset-demo) to let people intuitively experience the convenience and power of Skillset.
+Very cool, but also quite confusing. Therefore, I created this project to let people intuitively experience the convenience and power of Skillset.
 
 # Quick Try
 
@@ -95,7 +95,6 @@ I've created a public GitHub App [**Website Updater**](https://github.com/apps/w
 
 ## Deploy Backend Service
 
-Repo [Link](https://github.com/satomic/copilot-funny-extensions/skillset-website-updater).
 
 ### Source Code Mode
 

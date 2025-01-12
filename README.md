@@ -6,6 +6,6 @@
 
 
 # Funny Extensions
-- [**skillset-website-updater**](https://github.com/satomic/copilot-funny-extensions/skillset-website-updater), a Copilot Skillset that can update the website with natural language. You can install in your account and try it out following the link [**Public GitHub App: Website Updater**](https://github.com/apps/website-updater).
+- [**skillset-website-updater**](https://github.com/satomic/copilot-funny-extensions/tree/main/skillset-website-updater), a Copilot Skillset that can update the website with natural language. You can install in your account and try it out following the link [**Public GitHub App: Website Updater**](https://github.com/apps/website-updater).
 
 
