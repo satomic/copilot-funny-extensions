@@ -24,7 +24,7 @@ COPY requirements.txt /app/
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy the scripts to the working directory
-COPY utils /app/utils
+COPY ../utils /app/utils
 COPY app.py /app/
 COPY main.py /app/
 
