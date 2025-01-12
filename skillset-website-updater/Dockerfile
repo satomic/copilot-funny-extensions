@@ -16,17 +16,20 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+ARG APP_FOLDER
+ENV APP_FOLDER=${APP_FOLDER}
+
 # Copy requirements.txt and install Python packages
-COPY requirements.txt /app/
+COPY ${APP_FOLDER}/requirements.txt /app/
 
 # if you are in China, use this command to speed up the installation
 # RUN pip3 install -i https://mirrors.cloud.tencent.com/pypi/simple --no-cache-dir -r requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy the scripts to the working directory
-COPY ../utils /app/utils
-COPY app.py /app/
-COPY main.py /app/
+COPY utils /app/utils
+COPY ${APP_FOLDER}/app.py /app/
+COPY ${APP_FOLDER}/main.py /app/
 
 # Run the command one time
 CMD ["python3", "main.py"]
