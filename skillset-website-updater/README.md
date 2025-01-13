@@ -5,7 +5,7 @@
 | 1.0    | create           | 20241231 |
 | 1.1    | update doc           | 20250101 |
 
-## Table of contents
+# Table of contents
 
 - [Why Built This](#Why-Built-This)
 - [Quick Try](#Quick-Try)

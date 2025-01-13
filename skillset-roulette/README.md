@@ -5,7 +5,16 @@
 | 1.0    | create           | 20250112 |
 | 1.1    | update doc       | 20250113 |
 
-## Table of contents
+# Table of contents
+- [Why Built This](#why-built-this)
+- [Quick Try](#quick-try)
+- [Create Your Own Extension](#create-your-own-extension)
+   - [Deploy Backend Service](#deploy-backend-service)
+      - [Source Code Mode](#source-code-mode)
+      - [Docker Mode](#docker-mode)
+   - [Create GitHub App & Following Steps](#create-github-app--following-steps)
+      - [Copilot](#copilot)
+      - [Try Your Own Extension](#try-your-own-extension)
 
 
 # Why Built This
