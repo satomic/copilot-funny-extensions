@@ -38,6 +38,8 @@ Very cool, but also quite confusing. Therefore, I created this project to let pe
 
 I've created a public GitHub App [**Website Updater**](https://github.com/apps/website-updater) based on this project that you can install in your account and try it out.
 
+![](/image/webupdater.gif)
+
 ## Install GitHub App in your GitHub Account
 
 1. Visit [**Website Updater**](https://github.com/apps/website-updater), click **Configure**.
