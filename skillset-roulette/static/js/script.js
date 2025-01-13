@@ -9,6 +9,7 @@ const currentPlayerPrizeElement = document.getElementById("currentPlayerPrize");
 let prizeMap = {};
 let spinning = false;
 let spinQueue = [];
+let latestWinners = [];
 
 // Draw the roulette wheel
 function drawWheel() {
@@ -121,14 +122,16 @@ function runNextSpin() {
     const { playerName, result } = spinQueue.shift();
     console.log(`Starting spin for player: ${playerName}, prize: ${result}, function: runNextSpin`);
     spinWheel(playerName, result, () => {
+        updateWinnersList(latestWinners);
         console.log(`Completed spin for player: ${playerName}, prize: ${result}, function: runNextSpin`);
         runNextSpin();
     });
 }
 
 // Initialize SSE to listen for backend push data
+let eventSource;
 function initializeSSE() {
-    const eventSource = new EventSource('/winners_stream');
+    eventSource = new EventSource('/winners_stream');
 
     eventSource.onmessage = function(event) {
         const data = JSON.parse(event.data);
@@ -140,7 +143,7 @@ function initializeSSE() {
 
         if (data.winners) {
             // Update the historical winners list on the right
-            updateWinnersList(data.winners);
+            latestWinners = data.winners; 
         }
     };
 
@@ -148,6 +151,12 @@ function initializeSSE() {
         console.log("SSE connection error...");
     };
 }
+
+window.addEventListener("beforeunload", () => {
+    if (eventSource) {
+        eventSource.close();
+    }
+});
 
 // Fetch the prize map, then draw
 fetch("/prizes")

@@ -171,7 +171,10 @@ def get_prizes():
 
 @app.after_request
 def after_request(response):
-    response.headers["Cache-Control"] = "no-cache"
+    response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+    response.headers["Expires"] = "0"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["ETag"] = ""
     response.headers["X-Accel-Buffering"] = "no"
     return response
 
