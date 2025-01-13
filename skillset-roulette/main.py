@@ -14,12 +14,11 @@ import utils.github_utils as github_utils
 logger = configure_logger(with_date_folder=False)
 logger.info('-----------------Starting-----------------')
 
-verify_request_from_GitHub = True
-
-# Debug users not saved to historical records, can play multiple times
-debug_users = [
-    "satomic",
-]  
+verify_request_from_GitHub_env = os.getenv("VERIFY_REQUEST_FROM_GITHUB", "True")
+if verify_request_from_GitHub_env not in ("True", "False"):
+    raise ValueError("Environment variable VERIFY_REQUEST_FROM_GITHUB must be 'True' or 'False'")
+verify_request_from_GitHub = verify_request_from_GitHub_env == "True"
+debug_users = os.getenv("DEBUG_USERS", "satomic").split(",")
 
 # Define the path to store historical records
 HISTORY_FILE = "logs/history.json"
