@@ -32,6 +32,7 @@ COPY ${APP_FOLDER}/static /app/static
 COPY ${APP_FOLDER}/templates /app/templates
 COPY ${APP_FOLDER}/app.py /app/
 COPY ${APP_FOLDER}/main.py /app/
+COPY ${APP_FOLDER}/prizes.json /app/
 
 # Expose the port the app runs on
 EXPOSE 8082

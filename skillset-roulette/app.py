@@ -16,6 +16,9 @@ class RouletteGame:
 
     def spin(self, player_name):
         """Simulate roulette spin and return result"""
+        # Ensure we have valid prizes
+        if not self.options or sum(self.probabilities.values()) == 0:
+            return self.thanks
         result = random.choices(self.options, weights=self.probabilities.values(), k=1)[0]
         if result != self.thanks:
             self.winners.append({"name": player_name, "prize": result})
