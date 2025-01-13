@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+}
+
+#game {
+    display: flex;
+    justify-content: space-around;
+}
+
+#roulette {
+    display: inline-block;
+    text-align: center;
+}
+
+#result {
+    text-align: left;
+}
+
+canvas {
+    border: none;
+    margin-top: 10px;
+}
+
+#spinButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#winnersBox {
+    width: 300px;
+    height: 400px;
+    overflow-y: auto;
+    resize: none;
+}

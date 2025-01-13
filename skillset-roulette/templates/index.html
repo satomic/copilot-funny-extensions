@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Play</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>GitHub Copilot: Roulette Play Extension @ <a href="https://github.com/apps/roulette-play">github.com/apps/roulette-play</a></h1>
+    
+    <div id="game">
+        <div id="roulette">
+            <div id="wheel">
+                <canvas id="canvas" width="600" height="600"></canvas>
+            </div>
+        </div>
+        <div id="result">
+            <h2>Winning Result</h2>
+        
+            <!-- Current player winning info -->
+            <p id="currentPlayerResult">
+                Current Player: <span id="currentPlayerName">None</span><br />
+                Prize: <span id="currentPlayerPrize">None</span>
+            </p>
+        
+            <!-- Historical winners list -->
+            <h2>Historical Winners:</h2>
+            <textarea id="winnersBox" readonly></textarea>
+        </div>
+    </div>
+
+    <!-- Error message display -->
+    <div id="errorMessage" style="display: none; color: red; margin-top: 20px;"></div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

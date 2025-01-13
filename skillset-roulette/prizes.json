@@ -1,0 +1,7 @@
+{
+    "Apple": { "color": "#FFA500", "index": 1 },
+    "Banana": { "color": "#FF4500", "index": 2 },
+    "Cherry": { "color": "#FFD700", "index": 3 },
+    "Durian": { "color": "#7FFF00", "index": 4 },
+    "thanks": { "color": "#1E90FF", "index": 10 }
+}
