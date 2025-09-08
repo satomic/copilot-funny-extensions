@@ -151,5 +151,28 @@ def query():
     return jsonify({"status": "ok"})
 
 
+
+@app.route('/update', methods=['GET', 'POST'])
+def update():
+
+    if request.method == 'POST':
+        post_data = json.loads(request.data)
+        hex_color = post_data.get('hex_color', '#FFFFFF')
+        content = post_data.get('content', 'Hello, World!')
+        size = post_data.get('size', 48)
+        
+        webapp.color(hex_color)
+        webapp.text(content, size)
+        
+        logger.info(f"Route: /update, Color: {hex_color}, Content: {content}, Size: {size}")
+        
+        message = f'Updated - Color: {hex_color}, Text: {content}, Size: {size}'
+        return Response(f"data: {message}\n\n", 
+                       headers={"Content-Type": "text/event-stream"})
+        
+    return jsonify({"status": "ok"})
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8081, debug=True)
